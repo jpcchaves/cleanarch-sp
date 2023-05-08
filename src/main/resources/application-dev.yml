@@ -1,0 +1,17 @@
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  datasource:
+    url: ${DB_DEV_URL}
+    username: ${DB_DEV_USERNAME}
+    password: ${DB_DEV_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        time_zone: UTC
+    database: MYSQL
+    database-platform: org.hibernate.dialect.MySQLDialect
